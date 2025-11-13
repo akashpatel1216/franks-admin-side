@@ -1,0 +1,29 @@
+{
+  "name": "franks-admin-side",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Admin experience for managing Frank's daily specials.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.81.1",
+    "next": "^14.2.33",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.4",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^15.1.3",
+    "typescript": "^5.9.3"
+  }
+}
