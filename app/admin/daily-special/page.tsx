@@ -83,7 +83,6 @@ export async function saveDailySpecial(
   const priceInput = (formData.get('price_major') ?? '').toString().trim();
   const currencyCode =
     (formData.get('currency_code') ?? 'USD').toString().toUpperCase();
-  const emoji = (formData.get('emoji') ?? '').toString().trim();
   const highlightsInput = (formData.get('highlights') ?? '')
     .toString()
     .trim();
@@ -105,10 +104,6 @@ export async function saveDailySpecial(
     return { status: 'error', message: 'Description is required.' };
   }
 
-  if (!emoji) {
-    return { status: 'error', message: 'Emoji is required.' };
-  }
-
   const priceMajor = Number.parseFloat(priceInput);
   if (!Number.isFinite(priceMajor) || priceMajor <= 0) {
     return { status: 'error', message: 'Price must be a positive number.' };
@@ -127,7 +122,6 @@ export async function saveDailySpecial(
       description,
       price_cents: priceCents,
       currency_code: currencyCode,
-      emoji,
       highlights,
     },
     {
