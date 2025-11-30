@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdminClient } from '@/lib/supabaseAdmin';
 
+// Force dynamic rendering since we use request.headers
+export const dynamic = 'force-dynamic';
+
 // Check authentication
 function isAuthenticated(request: NextRequest): boolean {
   const authHeader = request.headers.get('authorization');
