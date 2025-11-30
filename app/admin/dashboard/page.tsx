@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 
 interface SpecialsData {
@@ -30,18 +30,7 @@ export default function AdminDashboard() {
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
-  useEffect(() => {
-    // Check authentication
-    const auth = sessionStorage.getItem('admin_auth');
-    if (auth !== 'authenticated') {
-      router.push('/admin/login');
-      return;
-    }
-
-    fetchSpecials();
-  }, [router]);
-
-  async function fetchSpecials() {
+  const fetchSpecials = useCallback(async () => {
     try {
       const res = await fetch('/api/admin/specials', {
         headers: {
@@ -74,7 +63,18 @@ export default function AdminDashboard() {
     } finally {
       setLoading(false);
     }
-  }
+  }, [router]);
+
+  useEffect(() => {
+    // Check authentication
+    const auth = sessionStorage.getItem('admin_auth');
+    if (auth !== 'authenticated') {
+      router.push('/admin/login');
+      return;
+    }
+
+    fetchSpecials();
+  }, [router, fetchSpecials]);
 
   async function handleSave(e: React.FormEvent) {
     e.preventDefault();
