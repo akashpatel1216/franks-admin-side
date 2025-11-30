@@ -1,22 +1,5 @@
 {
-  "node": {
-    "6b31b97ba72bae47c5b67e9ad044ff3111dc77b6": {
-      "workers": {
-        "app/admin/daily-special/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fakashpatel%2FDesktop%2Ffranks-admin-side%2Fapp%2Fadmin%2Fdaily-special%2Factions.ts%22%2C%5B%22saveDailySpecial%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/admin/daily-special/page": "rsc"
-      }
-    },
-    "753fd292ac9e6b763e31a71896c3b15963839701": {
-      "workers": {
-        "app/admin/daily-special/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fakashpatel%2FDesktop%2Ffranks-admin-side%2Fapp%2Fadmin%2Fdaily-special%2Factions.ts%22%2C%5B%22saveDailySpecial%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/admin/daily-special/page": "rsc"
-      }
-    }
-  },
+  "node": {},
   "edge": {},
-  "encryptionKey": "oBPcLtfG44OsNJ6hAjp0F1OEEN9QfFEyNPFarx7XjTU="
+  "encryptionKey": "h4HmX6Wpc4sa01Ocv0Qe/3mpCs7q2gqTkW/UT+and8k="
 }
